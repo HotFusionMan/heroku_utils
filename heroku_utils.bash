@@ -57,3 +57,8 @@ function h {
   echo $CMD
   $CMD
 }
+function he {
+	CMD="heroku $*"
+	echo $CMD
+	$CMD
+}
