@@ -27,6 +27,8 @@ function hr {
   $CMD
 }
 function h {
+  APP=my_app
+
   USAGE='Usage:  h (run console|bash|(rake <command>))|ps|<other_commands> <environment_name>'
   #USAGE='Usage:  h (r[un] c[onsole]|b[ash]|(r[ake] <command>))|p[s]|<other_commands> <environment_name>'
 
@@ -39,19 +41,19 @@ function h {
 	EXECUTABLE=heroku
 
   if [ -z $6 ] ;
-	then CMD="$EXECUTABLE $1 $2 $3 $4 --app unow-$5" ;
+	then CMD="$EXECUTABLE $1 $2 $3 $4 --app $APP-$5" ;
 	fi
 
   if [ -z $5 ] ;
-	then CMD="$EXECUTABLE $1 $2 $3 --app unow-$4" ;
+	then CMD="$EXECUTABLE $1 $2 $3 --app $APP-$4" ;
 	fi
 
   if [ -z $4 ] ;
-	then CMD="he $1 $2 --app unow-$3" ;
+	then CMD="he $1 $2 --app $APP-$3" ;
 	fi
 
   if [ -z $3 ] ;
-	then CMD="$EXECUTABLE $1 --app unow-$2" ;
+	then CMD="$EXECUTABLE $1 --app $APP-$2" ;
 	fi
 
   echo $CMD
